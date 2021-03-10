@@ -1,4 +1,4 @@
-let country = [ 
+const COUNTRIES = [ 
     {name: 'Afghanistan', code: 'AF'}, 
     {name: 'Åland Islands', code: 'AX'}, 
     {name: 'Albania', code: 'AL'}, 
@@ -245,5 +245,19 @@ let country = [
   ];
 
 export function getCountries() {
-    return country;
+    return COUNTRIES;
+}
+
+/**
+ * This function will filter out the countries based on the name parameter.
+ * @param {*} countires The array of country objects.
+ * @param {*} name The name filter.
+ * @returns 
+ */
+ export function filterCountry(countries, name) {
+  return(
+    countries.filter((country) =>
+      country.name.toUpperCase().includes(name.toUpperCase())
+    )
+  )
 }
